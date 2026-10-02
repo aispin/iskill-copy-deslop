@@ -31,15 +31,19 @@ window.PROMO = {
         meta2: "两阶段分离",
         meta3: "五步工作流第 4 步"
       },
-      terminal: {
-        title: "deslop — 改口语 + 真人点评",
-        lines: [
-          [{ t: "$ ", c: "p" }, { t: "这篇口播稿帮我改口语，再模拟观众挑刺", c: "k" }],
-          [{ t: "→ ", c: "p" }, { t: "Phase 1 去 AI 味（改最少的字）→ Phase 2 三视角逐句过", c: "" }],
-          [{ t: "✓ ", c: "p" }, { t: "v2 全稿已写入 viral-video-team-output/文案/<选题>-口播稿-v2.md", c: "s" }],
-          [{ t: "→ ", c: "p" }, { t: "点评：听不懂 1 处 · 不相信 2 处 · 想滑走 2 处，均给改法", c: "" }]
+      chat: {
+        title: "AI Agent · 对话现场",
+        status: "在线",
+        userLabel: "你",
+        agentLabel: "AI",
+        messages: [
+          { role: "user", text: "这篇口播稿太 AI 了，帮我改口语" },
+          { role: "agent", text: "两阶段分开做：先改成能说出口的话（长句拆短、书面词换掉），再模拟观众逐句挑刺——听不懂 / 不相信 / 想滑走，每处给改法。", tag: "Phase 1 完成" },
+          { role: "user", text: "改完能直接发吗？" },
+          { role: "agent", text: "还差一步：把 v2 稿交 iskill-content-precheck 做违禁词与四维评估，通过再发。" }
         ]
       },
+
 
       stats: [
         { value: "7", label: "口播专属 AI 味特征", note: "排比堆砌 / 总结升华 / 书面词…逐条给对照改法" },
@@ -128,15 +132,19 @@ window.PROMO = {
         meta2: "Two separate phases",
         meta3: "Step 4 of a 5-step workflow"
       },
-      terminal: {
-        title: "deslop — rewrite + audience review",
-        lines: [
-          [{ t: "$ ", c: "p" }, { t: "Make this spoken script colloquial, then role-play the audience and nitpick it.", c: "k" }],
-          [{ t: "→ ", c: "p" }, { t: "Phase 1 de-slop (change as little as possible) → Phase 2 three lenses, line by line", c: "" }],
-          [{ t: "✓ ", c: "p" }, { t: "v2 written to viral-video-team-output/文案/<topic>-口播稿-v2.md", c: "s" }],
-          [{ t: "→ ", c: "p" }, { t: "Review: 1 unclear · 2 unconvincing · 2 swipe-away, each with a fix", c: "" }]
+      chat: {
+        title: "AI Agent · live session",
+        status: "online",
+        userLabel: "You",
+        agentLabel: "AI",
+        messages: [
+          { role: "user", text: "This script reads like AI wrote it — make it sound human" },
+          { role: "agent", text: "Two phases, kept separate: first make it speakable (shorten long sentences, drop bookish words), then simulate viewers nitpicking it line by line — confusing / unconvincing / scroll-worthy — with a fix for each.", tag: "phase 1 done" },
+          { role: "user", text: "Can I publish it as-is?" },
+          { role: "agent", text: "One step left: send the v2 draft through iskill-content-precheck for banned words and the four-dimension review. Ship after that." }
         ]
       },
+
 
       stats: [
         { value: "7", label: "spoken-word AI-tell patterns", note: "piled parallelism / summarizing flourishes / jargon… each with a fix" },
