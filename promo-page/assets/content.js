@@ -80,13 +80,14 @@ window.PROMO = {
       steps: {
         eyebrow: "上手",
         title: "三步跑起来",
-        sub: "",
+        sub: "命令由 agent 跑，你只说要什么、看结果。",
         items: [
           { title: "交给 AI 装", desc: "把这句话粘进对话框，agent 会自己拉代码、读文档，再告诉你用法。", codeKey: "install" },
-          { title: "把口播稿发过去", desc: "要求先改口语、再模拟观众逐句挑刺（两阶段分开做）。", codeName: "prompt", code: "这篇口播稿帮我改口语，再模拟观众挑刺（听不懂 / 不相信 / 想滑走），每处给改法。" },
-          { title: "送下游预检", desc: "v2 稿改完，结尾会把稿子交给 iskill-content-precheck 做发布前预检。", codeName: "prompt", code: "把这份 v2 稿交 iskill-content-precheck 做发布前预检（违禁词 + 四维评估）。" }
+          { title: "把口播稿发过去", desc: "两件事分开说：先改口语，再模拟观众逐句挑刺。", codeName: "prompt", code: "这篇口播稿帮我改口语，再模拟观众挑刺（听不懂 / 不相信 / 想滑走），每处给改法。" },
+          { title: "念一遍顺不顺口", desc: "v2 稿和问题句清单直接回在对话里，你念一遍——卡住的地方就是还得改的地方。" }
         ]
       },
+
 
       faq: {
         eyebrow: "问答",
@@ -176,13 +177,14 @@ window.PROMO = {
       steps: {
         eyebrow: "Get started",
         title: "Up and running in three steps",
-        sub: "",
+        sub: "The agent runs the commands. You say what you want and check the result.",
         items: [
           { title: "Let your agent install it", desc: "Paste the line into the chat — it clones the repo, reads the docs, and tells you how to use it.", codeKey: "install" },
-          { title: "Send it your spoken script", desc: "Ask it to rewrite for speech first, then role-play the audience line by line.", codeName: "prompt", code: "Make this spoken script colloquial, then role-play the audience (unclear / unconvincing / swipe-away) and give a fix for each." },
-          { title: "Hand off to precheck", desc: "When the v2 is done, it points you to iskill-content-precheck for the pre-publish pass.", codeName: "prompt", code: "Send this v2 draft to iskill-content-precheck for a pre-publish pass (banned words + four-axis review)." }
+          { title: "Hand over the script", desc: "Ask for the two phases separately: rewrite first, then simulate viewers nitpicking it line by line.", codeName: "prompt", code: "Rewrite this script to sound human, then simulate viewers nitpicking it (confusing / unconvincing / scroll-worthy) — with a fix for each." },
+          { title: "Read it out loud", desc: "The v2 draft and the flagged lines come back in chat. Read it aloud — where you stumble still needs work." }
         ]
       },
+
 
       faq: {
         eyebrow: "FAQ",
