@@ -77,3 +77,15 @@ AI 味不是语法错，是**过度工整**：书面腔、排比堆砌、面面�
 - 本 skill 只管口播/短文案场景；**网文去 AI 味请用 story-deslop**（它有脚本检测器和完整 Gate 体系）。
 - 「不相信」类问题若涉及产品功效/收益数据，不要自己编出处——标注「需用户补充依据」，交给预检 skill 定性。
 - 用户只要求点评不改稿时，跳过 Phase 1 直接出点评报告。
+
+## 依赖同步
+
+本仓库 `promo-page/assets/{app.js,style.css,icons.js}` 是 [iskill-promo-page](https://github.com/aispin/iskill-promo-page)
+模板引擎的 vendored 副本（锁定版本见 `package.json` 的 `iskillDeps`），**不要手改**——
+去真源仓库改并升 `@iskill-version`，再用 iskill-dep-sync 同步回来（本机无该工具时按下面自举）：
+
+```bash
+T="$HOME/.workbuddy/skills/iskill-dep-sync/scripts/skill-deps.mjs"
+[ -f "$T" ] || { TMP="$(mktemp -d)"; curl -fsSL "https://raw.githubusercontent.com/aispin/iskill-dep-sync/HEAD/scripts/skill-deps.mjs" -o "$TMP/skill-deps.mjs"; T="$TMP/skill-deps.mjs"; }
+node "$T" check "$(pwd)"     # 漂移检测；node "$T" sync "$(pwd)" 恢复/升级；node "$T" env "$(pwd)" 冷启动自检
+```
